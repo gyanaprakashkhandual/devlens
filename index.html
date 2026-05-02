@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevLens — Code Analysis Tool</title>
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/panels.css" />
+    <link rel="stylesheet" href="styles/editor.css" />
+    <link rel="stylesheet" href="styles/canvas.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/theme-dark.css" id="theme-dark-sheet" />
+    <link
+      rel="stylesheet"
+      href="styles/theme-light.css"
+      id="theme-light-sheet"
+      disabled
+    />
+  </head>
+  <body class="theme-dark">
+    <div id="app">
+      <header id="toolbar-container"></header>
+      <div id="tab-bar-container"></div>
+      <div id="workspace">
+        <nav id="sidebar"></nav>
+        <main id="main-panel">
+          <div id="drop-overlay" aria-hidden="true">
+            <div class="drop-overlay-inner">
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                <polyline points="17 8 12 3 7 8" />
+                <line x1="12" y1="3" x2="12" y2="15" />
+              </svg>
+              <p>Drop files here</p>
+            </div>
+          </div>
+          <div id="editor-panel-container"></div>
+        </main>
+        <aside id="results-panel"></aside>
+      </div>
+      <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
+      <div id="modal-container"></div>
+    </div>
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>
