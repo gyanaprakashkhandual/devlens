@@ -12,5 +12,8 @@
     "not safari <= 18.3",
     "not samsung <= 27",
     "not ios_saf <= 18.3"
-  ]
+  ],
+  "hints": {
+    "meta-viewport": "off"
+  }
 }
