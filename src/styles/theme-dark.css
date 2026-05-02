@@ -1,0 +1,40 @@
+@layer theme {
+  :root,
+  .theme-dark {
+    --bg-base: #0d0f12;
+    --bg-surface: #131619;
+    --bg-elevated: #1a1e23;
+    --bg-editor: #0f1115;
+    --bg-hover: #1e2329;
+    --bg-active: #252b34;
+    --border: #1f2530;
+    --border-subtle: #181d25;
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --text-muted: #4a5568;
+    --accent: #38bdf8;
+    --accent-dim: #0ea5e9;
+    --accent-glow: rgba(56, 189, 248, 0.15);
+    --green: #4ade80;
+    --green-dim: rgba(74, 222, 128, 0.15);
+    --yellow: #fbbf24;
+    --yellow-dim: rgba(251, 191, 36, 0.15);
+    --red: #f87171;
+    --red-dim: rgba(248, 113, 113, 0.15);
+    --purple: #a78bfa;
+    --purple-dim: rgba(167, 139, 250, 0.15);
+    --orange: #fb923c;
+    --orange-dim: rgba(251, 146, 60, 0.15);
+    --syntax-keyword: #38bdf8;
+    --syntax-string: #4ade80;
+    --syntax-number: #fb923c;
+    --syntax-comment: #4a5568;
+    --syntax-function: #a78bfa;
+    --syntax-operator: #94a3b8;
+    --syntax-punctuation: #64748b;
+    --syntax-identifier: #e2e8f0;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.6);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.7);
+  }
+}

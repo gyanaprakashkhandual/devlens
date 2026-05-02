@@ -1,0 +1,39 @@
+@layer theme {
+  .theme-light {
+    --bg-base: #f8fafc;
+    --bg-surface: #ffffff;
+    --bg-elevated: #f1f5f9;
+    --bg-editor: #fafbfc;
+    --bg-hover: #f1f5f9;
+    --bg-active: #e2e8f0;
+    --border: #e2e8f0;
+    --border-subtle: #f1f5f9;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #94a3b8;
+    --accent: #0284c7;
+    --accent-dim: #0369a1;
+    --accent-glow: rgba(2, 132, 199, 0.1);
+    --green: #16a34a;
+    --green-dim: rgba(22, 163, 74, 0.1);
+    --yellow: #d97706;
+    --yellow-dim: rgba(217, 119, 6, 0.1);
+    --red: #dc2626;
+    --red-dim: rgba(220, 38, 38, 0.1);
+    --purple: #7c3aed;
+    --purple-dim: rgba(124, 58, 237, 0.1);
+    --orange: #ea580c;
+    --orange-dim: rgba(234, 88, 12, 0.1);
+    --syntax-keyword: #0284c7;
+    --syntax-string: #16a34a;
+    --syntax-number: #ea580c;
+    --syntax-comment: #94a3b8;
+    --syntax-function: #7c3aed;
+    --syntax-operator: #475569;
+    --syntax-punctuation: #64748b;
+    --syntax-identifier: #0f172a;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.16);
+  }
+}
