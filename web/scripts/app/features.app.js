@@ -1,4 +1,4 @@
-import { createIcon } from './icons.js';
+import { createIcon } from "../../icons/core.icons";
 
 const featuresHTML = `
   <div class="features-container">
@@ -126,41 +126,41 @@ const featuresHTML = `
 `;
 
 function initFeatures() {
-  const featuresEl = document.getElementById('features');
-  featuresEl.innerHTML = featuresHTML;
+    const featuresEl = document.getElementById('features');
+    featuresEl.innerHTML = featuresHTML;
 
-  const featureIcons = [
-    'code',
-    'layers',
-    'activity',
-    'eye',
-    'cpu',
-    'target'
-  ];
+    const featureIcons = [
+        'code',
+        'layers',
+        'activity',
+        'eye',
+        'cpu',
+        'target'
+    ];
 
-  const featureCards = featuresEl.querySelectorAll('.feature-card');
-  featureCards.forEach((card, index) => {
-    const iconDiv = card.querySelector('.feature-icon');
-    iconDiv.appendChild(createIcon(featureIcons[index]));
+    const featureCards = featuresEl.querySelectorAll('.feature-card');
+    featureCards.forEach((card, index) => {
+        const iconDiv = card.querySelector('.feature-icon');
+        iconDiv.appendChild(createIcon(featureIcons[index]));
 
-    const listIcons = card.querySelectorAll('.list-icon');
-    listIcons.forEach(icon => {
-      icon.appendChild(createIcon('check'));
+        const listIcons = card.querySelectorAll('.list-icon');
+        listIcons.forEach(icon => {
+            icon.appendChild(createIcon('check'));
+        });
     });
-  });
 
-  const secondaryIcons = [
-    'zap',
-    'shield',
-    'download',
-    'moon'
-  ];
+    const secondaryIcons = [
+        'zap',
+        'shield',
+        'download',
+        'moon'
+    ];
 
-  const secondaryItems = featuresEl.querySelectorAll('.secondary-item');
-  secondaryItems.forEach((item, index) => {
-    const iconDiv = item.querySelector('.secondary-icon');
-    iconDiv.appendChild(createIcon(secondaryIcons[index]));
-  });
+    const secondaryItems = featuresEl.querySelectorAll('.secondary-item');
+    secondaryItems.forEach((item, index) => {
+        const iconDiv = item.querySelector('.secondary-icon');
+        iconDiv.appendChild(createIcon(secondaryIcons[index]));
+    });
 }
 
 document.addEventListener('DOMContentLoaded', initFeatures);

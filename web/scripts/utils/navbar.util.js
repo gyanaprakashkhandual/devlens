@@ -1,5 +1,5 @@
-import { createIcon } from './icons.js';
-import themeManager from './theme.js';
+import { createIcon } from '../../icons/core.icons.js';
+import themeManager from './theme.util.js';
 
 const navbarHTML = `
   <div class="navbar-container">

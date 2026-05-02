@@ -1,4 +1,4 @@
-import { createIcon } from './icons.js';
+import { createIcon } from "../../icons/core.icons";
 
 const footerHTML = `
   <div class="footer-container">
@@ -69,31 +69,31 @@ const footerHTML = `
 `;
 
 function initFooter() {
-  const footerEl = document.getElementById('footer');
-  footerEl.innerHTML = footerHTML;
+    const footerEl = document.getElementById('footer');
+    footerEl.innerHTML = footerHTML;
 
-  const footerLogo = footerEl.querySelector('.footer-logo');
-  footerLogo.appendChild(createIcon('logo'));
+    const footerLogo = footerEl.querySelector('.footer-logo');
+    footerLogo.appendChild(createIcon('logo'));
 
-  const socialIcons = footerEl.querySelectorAll('.social-icon');
-  const socialNames = ['github', 'twitter', 'linkedin'];
-  socialIcons.forEach((icon, index) => {
-    icon.appendChild(createIcon(socialNames[index]));
-  });
-
-  const footerLinks = footerEl.querySelectorAll('.footer-links a');
-  footerLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const target = link.getAttribute('href');
-      if (target.startsWith('#')) {
-        const element = document.querySelector(target);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
+    const socialIcons = footerEl.querySelectorAll('.social-icon');
+    const socialNames = ['github', 'twitter', 'linkedin'];
+    socialIcons.forEach((icon, index) => {
+        icon.appendChild(createIcon(socialNames[index]));
     });
-  });
+
+    const footerLinks = footerEl.querySelectorAll('.footer-links a');
+    footerLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = link.getAttribute('href');
+            if (target.startsWith('#')) {
+                const element = document.querySelector(target);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
 }
 
 document.addEventListener('DOMContentLoaded', initFooter);

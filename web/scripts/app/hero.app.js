@@ -1,4 +1,4 @@
-import { createIcon } from './icons.js';
+import { createIcon } from "../../icons/core.icons";
 
 const heroHTML = `
   <div class="hero-container">
@@ -62,30 +62,30 @@ const heroHTML = `
 `;
 
 function initHero() {
-  const heroEl = document.getElementById('hero');
-  heroEl.innerHTML = heroHTML;
+    const heroEl = document.getElementById('hero');
+    heroEl.innerHTML = heroHTML;
 
-  const primaryBtn = heroEl.querySelector('.btn-primary');
-  const secondaryBtn = heroEl.querySelector('.btn-secondary');
+    const primaryBtn = heroEl.querySelector('.btn-primary');
+    const secondaryBtn = heroEl.querySelector('.btn-secondary');
 
-  const downloadIcon = primaryBtn.querySelector('.btn-icon');
-  downloadIcon.appendChild(createIcon('download'));
+    const downloadIcon = primaryBtn.querySelector('.btn-icon');
+    downloadIcon.appendChild(createIcon('download'));
 
-  const docIcon = secondaryBtn.querySelector('.btn-icon');
-  docIcon.appendChild(createIcon('externalLink'));
+    const docIcon = secondaryBtn.querySelector('.btn-icon');
+    docIcon.appendChild(createIcon('externalLink'));
 
-  const badges = heroEl.querySelectorAll('.badge-icon');
-  badges[0].appendChild(createIcon('shield'));
-  badges[1].appendChild(createIcon('zap'));
-  badges[2].appendChild(createIcon('layers'));
+    const badges = heroEl.querySelectorAll('.badge-icon');
+    badges[0].appendChild(createIcon('shield'));
+    badges[1].appendChild(createIcon('zap'));
+    badges[2].appendChild(createIcon('layers'));
 
-  primaryBtn.addEventListener('click', () => {
-    window.location.href = '/devlens/index.html';
-  });
+    primaryBtn.addEventListener('click', () => {
+        window.location.href = '/devlens/index.html';
+    });
 
-  secondaryBtn.addEventListener('click', () => {
-    document.getElementById('features').scrollIntoView({ behavior: 'smooth' });
-  });
+    secondaryBtn.addEventListener('click', () => {
+        document.getElementById('features').scrollIntoView({ behavior: 'smooth' });
+    });
 }
 
 document.addEventListener('DOMContentLoaded', initHero);

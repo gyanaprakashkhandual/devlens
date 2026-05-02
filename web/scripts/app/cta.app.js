@@ -1,4 +1,4 @@
-import { createIcon } from './icons.js';
+import { createIcon } from "../../icons/core.icons";
 
 const ctaHTML = `
   <div class="cta-container">
@@ -42,31 +42,31 @@ const ctaHTML = `
 `;
 
 function initCTA() {
-  const ctaEl = document.getElementById('cta');
-  ctaEl.innerHTML = ctaHTML;
+    const ctaEl = document.getElementById('cta');
+    ctaEl.innerHTML = ctaHTML;
 
-  const primaryBtn = ctaEl.querySelector('.cta-primary');
-  const secondaryBtn = ctaEl.querySelector('.cta-secondary');
+    const primaryBtn = ctaEl.querySelector('.cta-primary');
+    const secondaryBtn = ctaEl.querySelector('.cta-secondary');
 
-  const primaryIcon = primaryBtn.querySelector('.btn-icon');
-  primaryIcon.appendChild(createIcon('arrow'));
+    const primaryIcon = primaryBtn.querySelector('.btn-icon');
+    primaryIcon.appendChild(createIcon('arrow'));
 
-  const secondaryIcon = secondaryBtn.querySelector('.btn-icon');
-  secondaryIcon.appendChild(createIcon('externalLink'));
+    const secondaryIcon = secondaryBtn.querySelector('.btn-icon');
+    secondaryIcon.appendChild(createIcon('externalLink'));
 
-  const highlights = ctaEl.querySelectorAll('.highlight-icon');
-  const highlightIcons = ['shield', 'zap', 'cpu', 'github'];
-  highlights.forEach((icon, index) => {
-    icon.appendChild(createIcon(highlightIcons[index]));
-  });
+    const highlights = ctaEl.querySelectorAll('.highlight-icon');
+    const highlightIcons = ['shield', 'zap', 'cpu', 'github'];
+    highlights.forEach((icon, index) => {
+        icon.appendChild(createIcon(highlightIcons[index]));
+    });
 
-  primaryBtn.addEventListener('click', () => {
-    window.location.href = '/devlens/index.html';
-  });
+    primaryBtn.addEventListener('click', () => {
+        window.location.href = '/devlens/index.html';
+    });
 
-  secondaryBtn.addEventListener('click', () => {
-    window.open('#docs', '_blank');
-  });
+    secondaryBtn.addEventListener('click', () => {
+        window.open('#docs', '_blank');
+    });
 }
 
 document.addEventListener('DOMContentLoaded', initCTA);
