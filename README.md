@@ -1,6 +1,6 @@
 # DevLens
 
-![DevLens](images/utils/readme.core.png)
+![DevLens](/public//images/utils/readme.core.png)
 
 **A fully offline, zero-dependency code analysis tool that runs entirely in your browser.**
 
