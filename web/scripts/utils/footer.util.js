@@ -1,4 +1,4 @@
-import { createIcon } from "../../icons/core.icons";
+import { createIcon } from "../../icons/core.icons.js";
 
 const footerHTML = `
   <div class="footer-container">

@@ -1,4 +1,4 @@
-import { createIcon } from "../../icons/core.icons";
+import { createIcon } from "../../icons/core.icons.js";
 
 const featuresHTML = `
   <div class="features-container">
