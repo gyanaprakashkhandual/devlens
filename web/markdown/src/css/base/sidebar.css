@@ -1,0 +1,96 @@
+.sidebar {
+  width: var(--sidebar-w);
+  flex-shrink: 0;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--sidebar-border);
+  overflow-y: auto;
+  padding: var(--space-6) 0;
+  transition: transform var(--transition-base), background var(--transition-base), border-color var(--transition-base);
+}
+
+.sidebar::-webkit-scrollbar { width: 4px; }
+.sidebar::-webkit-scrollbar-track { background: transparent; }
+.sidebar::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: var(--radius-full); }
+
+.sidebar__header {
+  padding: 0 var(--space-5) var(--space-3);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+}
+
+.sidebar__empty {
+  padding: var(--space-4) var(--space-5);
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  line-height: var(--line-height-relaxed);
+}
+
+.toc-list {
+  padding: 0;
+}
+
+.toc-item {
+  display: block;
+}
+
+.toc-link {
+  display: block;
+  padding: var(--space-1) var(--space-5);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  line-height: var(--line-height-snug);
+  border-left: 2px solid transparent;
+  transition: color var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast);
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.toc-link:hover {
+  color: var(--text-primary);
+  background: var(--surface-hover);
+}
+
+.toc-link.active {
+  color: var(--accent);
+  border-left-color: var(--accent);
+  background: var(--accent-light);
+  font-weight: 500;
+}
+
+.toc-item--h1 .toc-link { padding-left: var(--space-5); font-weight: 600; }
+.toc-item--h2 .toc-link { padding-left: calc(var(--space-5) + 0.75rem); }
+.toc-item--h3 .toc-link { padding-left: calc(var(--space-5) + 1.5rem); font-size: var(--font-size-xs); }
+
+.sidebar__overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 49;
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: var(--topbar-h);
+    bottom: 0;
+    z-index: 50;
+    transform: translateX(-100%);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar__overlay.visible {
+    display: block;
+  }
+}
