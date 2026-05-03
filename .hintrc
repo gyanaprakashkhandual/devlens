@@ -15,6 +15,7 @@
     "not and_ff <= 136"
   ],
   "hints": {
-    "meta-viewport": "off"
+    "meta-viewport": "off",
+    "css-prefix-order": "off"
   }
 }

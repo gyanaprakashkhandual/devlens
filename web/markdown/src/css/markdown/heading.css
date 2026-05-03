@@ -1,0 +1,68 @@
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  line-height: var(--line-height-tight);
+  color: var(--text-primary);
+  margin-top: var(--space-10);
+  margin-bottom: var(--space-4);
+  position: relative;
+  scroll-margin-top: calc(var(--topbar-h) + var(--space-6));
+}
+
+.markdown-body h1:first-child,
+.markdown-body h2:first-child,
+.markdown-body h3:first-child {
+  margin-top: 0;
+}
+
+.markdown-body h1 { font-size: var(--font-size-4xl); letter-spacing: -0.02em; }
+.markdown-body h2 { font-size: var(--font-size-3xl); letter-spacing: -0.015em; padding-bottom: var(--space-3); border-bottom: 1px solid var(--border); }
+.markdown-body h3 { font-size: var(--font-size-2xl); letter-spacing: -0.01em; }
+.markdown-body h4 { font-size: var(--font-size-xl); }
+.markdown-body h5 { font-size: var(--font-size-lg); }
+.markdown-body h6 { font-size: var(--font-size-base); color: var(--text-secondary); }
+
+.heading-anchor {
+  position: absolute;
+  left: -1.4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  color: var(--text-muted);
+  font-size: 0.85em;
+  font-weight: 400;
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+  padding-right: var(--space-2);
+}
+
+.markdown-body h1 .heading-anchor,
+.markdown-body h2 .heading-anchor,
+.markdown-body h3 .heading-anchor,
+.markdown-body h4 .heading-anchor,
+.markdown-body h5 .heading-anchor,
+.markdown-body h6 .heading-anchor {
+  top: 0.6em;
+  transform: none;
+}
+
+.markdown-body h1:hover .heading-anchor,
+.markdown-body h2:hover .heading-anchor,
+.markdown-body h3:hover .heading-anchor,
+.markdown-body h4:hover .heading-anchor,
+.markdown-body h5:hover .heading-anchor,
+.markdown-body h6:hover .heading-anchor {
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .markdown-body h1 { font-size: var(--font-size-3xl); }
+  .markdown-body h2 { font-size: var(--font-size-2xl); }
+  .markdown-body h3 { font-size: var(--font-size-xl); }
+  .heading-anchor { display: none; }
+}

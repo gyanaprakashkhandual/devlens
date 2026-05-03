@@ -1,0 +1,60 @@
+[data-theme="light"] {
+  --hl-keyword:   #d63384;
+  --hl-string:    #198754;
+  --hl-comment:   #6c757d;
+  --hl-number:    #0d6efd;
+  --hl-function:  #6610f2;
+  --hl-operator:  #495057;
+  --hl-tag:       #d63384;
+  --hl-attr:      #0d6efd;
+  --hl-value:     #198754;
+  --hl-selector:  #6610f2;
+  --hl-property:  #0d6efd;
+  --hl-builtin:   #0dcaf0;
+  --hl-type:      #fd7e14;
+  --hl-variable:  #495057;
+  --hl-punctuation: #495057;
+  --hl-regex:     #e83e8c;
+  --hl-boolean:   #0d6efd;
+  --hl-null:      #6c757d;
+}
+
+[data-theme="dark"] {
+  --hl-keyword:   #ff7b72;
+  --hl-string:    #a5d6ff;
+  --hl-comment:   #8b949e;
+  --hl-number:    #79c0ff;
+  --hl-function:  #d2a8ff;
+  --hl-operator:  #ffa657;
+  --hl-tag:       #7ee787;
+  --hl-attr:      #79c0ff;
+  --hl-value:     #a5d6ff;
+  --hl-selector:  #d2a8ff;
+  --hl-property:  #79c0ff;
+  --hl-builtin:   #56d364;
+  --hl-type:      #ffa657;
+  --hl-variable:  #e6edf3;
+  --hl-punctuation: #8b949e;
+  --hl-regex:     #a5d6ff;
+  --hl-boolean:   #79c0ff;
+  --hl-null:      #8b949e;
+}
+
+.hl-keyword    { color: var(--hl-keyword); font-weight: 600; }
+.hl-string     { color: var(--hl-string); }
+.hl-comment    { color: var(--hl-comment); font-style: italic; }
+.hl-number     { color: var(--hl-number); }
+.hl-function   { color: var(--hl-function); }
+.hl-operator   { color: var(--hl-operator); }
+.hl-tag        { color: var(--hl-tag); }
+.hl-attr       { color: var(--hl-attr); }
+.hl-value      { color: var(--hl-value); }
+.hl-selector   { color: var(--hl-selector); }
+.hl-property   { color: var(--hl-property); }
+.hl-builtin    { color: var(--hl-builtin); }
+.hl-type       { color: var(--hl-type); }
+.hl-variable   { color: var(--hl-variable); }
+.hl-punctuation{ color: var(--hl-punctuation); }
+.hl-regex      { color: var(--hl-regex); }
+.hl-boolean    { color: var(--hl-boolean); font-weight: 600; }
+.hl-null       { color: var(--hl-null); }

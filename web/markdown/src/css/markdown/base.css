@@ -1,0 +1,126 @@
+.markdown-body p {
+  margin-bottom: var(--space-5);
+  color: var(--text-primary);
+}
+
+.markdown-body a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-border);
+  text-underline-offset: 3px;
+  transition: color var(--transition-fast), text-decoration-color var(--transition-fast);
+}
+
+.markdown-body a:hover {
+  color: var(--accent-hover);
+  text-decoration-color: var(--accent-hover);
+}
+
+.markdown-body hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: var(--space-10) 0;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  margin: var(--space-6) 0;
+}
+
+.markdown-body strong {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.markdown-body em {
+  font-style: italic;
+}
+
+.markdown-body del {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.markdown-body mark {
+  background: var(--mark-bg);
+  color: var(--mark-text);
+  padding: 0.1em 0.25em;
+  border-radius: var(--radius-sm);
+}
+
+.markdown-body sub {
+  font-size: 0.75em;
+  vertical-align: sub;
+}
+
+.markdown-body sup {
+  font-size: 0.75em;
+  vertical-align: super;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 0.1em 0.4em;
+  font-family: var(--font-mono);
+  font-size: 0.8em;
+  background: var(--kbd-bg);
+  border: 1px solid var(--kbd-border);
+  border-bottom: 2px solid var(--kbd-shadow);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.markdown-body .footnote-ref {
+  font-size: var(--font-size-xs);
+  vertical-align: super;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.markdown-body .footnotes {
+  margin-top: var(--space-12);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border);
+}
+
+.markdown-body .footnotes ol {
+  padding-left: var(--space-5);
+  list-style: decimal;
+}
+
+.markdown-body .footnotes li {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.markdown-body .frontmatter-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-6);
+  margin-bottom: var(--space-8);
+  font-family: var(--font-sans);
+}
+
+.markdown-body .frontmatter-card table {
+  width: auto;
+}
+
+.markdown-body .frontmatter-card td {
+  padding: var(--space-1) var(--space-4) var(--space-1) 0;
+  font-size: var(--font-size-sm);
+  border: none;
+  background: none;
+}
+
+.markdown-body .frontmatter-card td:first-child {
+  font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}

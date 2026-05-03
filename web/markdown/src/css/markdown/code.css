@@ -1,0 +1,107 @@
+.markdown-body code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  color: var(--code-text);
+  padding: 0.15em 0.4em;
+  border-radius: var(--radius-sm);
+}
+
+.markdown-body pre {
+  margin: var(--space-6) 0;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--code-border);
+  overflow: hidden;
+  background: var(--code-bg);
+}
+
+.markdown-body pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: var(--font-size-sm);
+  color: var(--code-text);
+  display: block;
+}
+
+.code-block {
+  position: relative;
+}
+
+.code-block__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2) var(--space-4);
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--code-border);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+}
+
+.code-block__lang {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.code-block__actions {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.code-block__copy {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: var(--font-sans);
+}
+
+.code-block__copy:hover {
+  color: var(--text-primary);
+  background: var(--surface-hover);
+  border-color: var(--border);
+}
+
+.code-block__copy.copied {
+  color: #12b76a;
+  border-color: #12b76a;
+}
+
+.code-block__body {
+  overflow-x: auto;
+  padding: var(--space-4);
+}
+
+.code-block__body::-webkit-scrollbar { height: 4px; }
+.code-block__body::-webkit-scrollbar-track { background: transparent; }
+.code-block__body::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: var(--radius-full); }
+
+.code-block--lined .code-line {
+  display: flex;
+}
+
+.code-line__num {
+  user-select: none;
+  min-width: 2.5rem;
+  padding-right: var(--space-4);
+  text-align: right;
+  color: var(--text-muted);
+  border-right: 1px solid var(--code-border);
+  margin-right: var(--space-4);
+  opacity: 0.5;
+  font-size: var(--font-size-xs);
+  line-height: 1.6;
+}

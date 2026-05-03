@@ -1,0 +1,55 @@
+.markdown-body .footnotes {
+  margin-top: var(--space-12);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border);
+  font-family: var(--font-sans);
+}
+
+.markdown-body .footnotes-title {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: var(--space-4);
+}
+
+.markdown-body .footnotes ol {
+  padding-left: var(--space-5);
+  list-style: decimal;
+  margin-bottom: 0;
+}
+
+.markdown-body .footnotes li {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2);
+  padding-left: var(--space-2);
+  line-height: var(--line-height-relaxed);
+}
+
+.markdown-body .footnote-ref {
+  font-size: 0.75em;
+  vertical-align: super;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 700;
+  font-family: var(--font-sans);
+  margin-left: 1px;
+}
+
+.markdown-body .footnote-ref:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+.markdown-body .footnote-backref {
+  color: var(--accent);
+  text-decoration: none;
+  margin-left: var(--space-2);
+  font-size: 0.85em;
+}
+
+.markdown-body .footnote-backref:hover {
+  color: var(--accent-hover);
+}

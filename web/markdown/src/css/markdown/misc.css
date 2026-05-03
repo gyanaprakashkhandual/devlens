@@ -1,0 +1,109 @@
+.markdown-body .math-block {
+  overflow-x: auto;
+  padding: var(--space-4);
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: var(--radius-md);
+  margin: var(--space-6) 0;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  color: var(--code-text);
+  text-align: center;
+}
+
+.markdown-body .math-inline {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--code-bg);
+  padding: 0.1em 0.3em;
+  border-radius: var(--radius-sm);
+  color: var(--code-text);
+}
+
+.markdown-body .emoji {
+  font-style: normal;
+  display: inline;
+}
+
+.markdown-body .mermaid-block {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  margin: var(--space-6) 0;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.markdown-body .mermaid-block::before {
+  content: '⬡ Mermaid diagram';
+  display: block;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: var(--space-3);
+}
+
+.markdown-body abbr {
+  text-decoration: underline dotted;
+  cursor: help;
+  color: inherit;
+}
+
+.markdown-body details {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  margin: var(--space-4) 0;
+  background: var(--bg-secondary);
+}
+
+.markdown-body summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.markdown-body summary::before {
+  content: '▶';
+  font-size: 0.65em;
+  transition: transform var(--transition-fast);
+  color: var(--text-muted);
+}
+
+.markdown-body details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.markdown-body details[open] {
+  padding-bottom: var(--space-4);
+}
+
+.markdown-body details[open] summary {
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--border);
+}
+
+.search-highlight {
+  background: #fef3c7;
+  color: #92400e;
+  border-radius: 2px;
+  padding: 0 2px;
+}
+
+[data-theme="dark"] .search-highlight {
+  background: #78350f;
+  color: #fef3c7;
+}

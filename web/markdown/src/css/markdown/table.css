@@ -1,0 +1,49 @@
+.markdown-body .table-wrapper {
+  overflow-x: auto;
+  margin: var(--space-6) 0;
+  border: 1px solid var(--table-border);
+  border-radius: var(--radius-md);
+}
+
+.markdown-body table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+}
+
+.markdown-body th {
+  background: var(--table-head-bg);
+  color: var(--text-primary);
+  font-weight: 600;
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  border-bottom: 2px solid var(--table-border);
+  white-space: nowrap;
+}
+
+.markdown-body td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--table-border);
+  color: var(--text-primary);
+  vertical-align: top;
+  line-height: var(--line-height-relaxed);
+}
+
+.markdown-body tr:last-child td {
+  border-bottom: none;
+}
+
+.markdown-body tr:nth-child(even) td {
+  background: var(--table-row-alt);
+}
+
+.markdown-body tr:hover td {
+  background: var(--surface-hover);
+}
+
+.markdown-body th[align="center"],
+.markdown-body td[align="center"] { text-align: center; }
+
+.markdown-body th[align="right"],
+.markdown-body td[align="right"] { text-align: right; }
