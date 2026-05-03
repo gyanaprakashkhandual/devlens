@@ -95,3 +95,43 @@ export function auditDOM(doc) {
 
     return findings;
 }
+
+/*
+export const WCAG_RULES = [
+    { id: 'img-alt',        criterion: '1.1.1', level: 'A',  title: 'Images have text alternatives' },
+    { id: 'input-label',    criterion: '1.3.1', level: 'A',  title: 'Form inputs have labels' },
+    { id: 'heading-order',  criterion: '1.3.1', level: 'A',  title: 'Heading levels not skipped' },
+    { id: 'color-contrast', criterion: '1.4.3', level: 'AA', title: 'Text contrast ratio >= 4.5:1 (3:1 large)' },
+    { id: 'autoplay',       criterion: '1.4.2', level: 'A',  title: 'No autoplay media' },
+    { id: 'link-name',      criterion: '2.4.4', level: 'A',  title: 'Links have accessible names' },
+    { id: 'tabindex',       criterion: '2.4.3', level: 'A',  title: 'No positive tabindex values' },
+    { id: 'button-name',    criterion: '4.1.2', level: 'A',  title: 'Buttons have accessible names' },
+    { id: 'iframe-title',   criterion: '4.1.2', level: 'A',  title: 'iframes have title attributes' },
+    { id: 'aria-role-valid',      criterion: '4.1.2', level: 'A', title: 'ARIA roles are valid' },
+    { id: 'aria-required-attr',   criterion: '4.1.2', level: 'A', title: 'Required ARIA attributes present' },
+    { id: 'lang',           criterion: '3.1.1', level: 'A',  title: 'Page language specified' },
+];
+
+export function getRuleById(id) {
+    return WCAG_RULES.find(r => r.id === id) || { id, criterion: '?', level: '?', title: id };
+}
+
+export function groupByCriterion(findings) {
+    const grouped = new Map();
+    for (const finding of findings) {
+        const rule = getRuleById(finding.id);
+        const key = rule.criterion;
+        if (!grouped.has(key)) grouped.set(key, { rule, findings: [] });
+        grouped.get(key).findings.push(finding);
+    }
+    return [...grouped.values()].sort((a, b) => a.rule.criterion.localeCompare(b.rule.criterion));
+}
+
+export function scoreSummary(findings) {
+    const total = WCAG_RULES.length;
+    const failed = new Set(findings.filter(f => !f.pass).map(f => f.id)).size;
+    const passed = total - failed;
+    const score = Math.round((passed / total) * 100);
+    return { total, passed, failed, score };
+}
+*/
