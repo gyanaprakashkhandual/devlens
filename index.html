@@ -1,54 +1,99 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DevLens — Code Analysis Tool</title>
-    <link rel="stylesheet" href="styles/reset.css" />
-    <link rel="stylesheet" href="styles/layout.css" />
-    <link rel="stylesheet" href="styles/panels.css" />
-    <link rel="stylesheet" href="styles/editor.css" />
-    <link rel="stylesheet" href="styles/canvas.css" />
-    <link rel="stylesheet" href="styles/components.css" />
-    <link rel="stylesheet" href="styles/theme-dark.css" id="theme-dark-sheet" />
-    <link
-      rel="stylesheet"
-      href="styles/theme-light.css"
-      id="theme-light-sheet"
-      disabled
-    />
-  </head>
-  <body class="theme-dark">
-    <div id="app">
-      <header id="toolbar-container"></header>
-      <div id="tab-bar-container"></div>
-      <div id="workspace">
-        <nav id="sidebar"></nav>
-        <main id="main-panel">
-          <div id="drop-overlay" aria-hidden="true">
-            <div class="drop-overlay-inner">
-              <svg
-                width="48"
-                height="48"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-              >
-                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-                <polyline points="17 8 12 3 7 8" />
-                <line x1="12" y1="3" x2="12" y2="15" />
-              </svg>
-              <p>Drop files here</p>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DevLens — Offline browser-based JavaScript analysis, profiling, accessibility auditing and memory leak detection tool.">
+    <title>DevLens</title>
+
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/layout.css">
+    <link rel="stylesheet" href="./styles/panels.css">
+    <link rel="stylesheet" href="./styles/editor.css">
+    <link rel="stylesheet" href="./styles/canvas.css">
+    <link rel="stylesheet" href="./styles/components.css">
+    <link rel="stylesheet" href="./styles/theme-dark.css">
+    <link rel="stylesheet" href="./styles/theme-light.css">
+    <link rel="stylesheet" href="./src/ui/theme/variables.css">
+</head>
+<body>
+
+<a href="#panel-nav" class="skip-link">Skip to navigation</a>
+<a href="#panel-container" class="skip-link">Skip to content</a>
+
+<div id="app" role="application" aria-label="DevLens developer tool">
+
+    <header id="toolbar" role="banner"></header>
+
+    <main id="app-body" role="main">
+    </main>
+
+    <div
+        id="drop-zone-overlay"
+        role="region"
+        aria-label="File drop zone"
+        aria-live="polite"
+    >
+        <div id="drop-zone" class="drop-zone-inner">
+            <div class="drop-zone-title">Drop files here</div>
+            <p class="drop-zone-hint">
+                .js &nbsp; .mjs &nbsp; .ts &nbsp; .html &nbsp; .css &nbsp; .json
+            </p>
+            <p class="drop-zone-hint">Up to 20 files &nbsp;|&nbsp; 2 MB per file</p>
+            <div class="drop-zone-actions">
+                <button
+                    class="drop-btn primary"
+                    onclick="document.getElementById('file-input').click()"
+                    aria-label="Open file picker"
+                >
+                    Choose files
+                </button>
+                <button
+                    class="drop-btn secondary"
+                    onclick="document.getElementById('paste-zone').style.display=''"
+                    aria-label="Paste code directly"
+                >
+                    Paste code
+                </button>
             </div>
-          </div>
-          <div id="editor-panel-container"></div>
-        </main>
-        <aside id="results-panel"></aside>
-      </div>
-      <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
-      <div id="modal-container"></div>
+            <div id="paste-zone" style="display:none;" class="paste-zone">
+                <input
+                    id="paste-filename"
+                    type="text"
+                    placeholder="filename.js"
+                    aria-label="Filename for pasted code"
+                    class="paste-filename-input"
+                >
+                <textarea
+                    id="paste-area"
+                    placeholder="Paste your JavaScript, HTML, CSS, or JSON here..."
+                    aria-label="Code paste area"
+                    class="paste-textarea"
+                    rows="10"
+                ></textarea>
+                <button id="paste-ingest-btn" class="drop-btn primary" aria-label="Load pasted code">
+                    Load Code
+                </button>
+            </div>
+        </div>
     </div>
-    <script type="module" src="src/main.js"></script>
-  </body>
+
+</div>
+
+<div id="panel-nav" role="tablist" aria-label="Analysis modules" class="panel-nav"></div>
+<div id="panel-container" role="region" aria-label="Analysis panels"></div>
+
+<input
+    id="file-input"
+    type="file"
+    multiple
+    accept=".js,.mjs,.ts,.html,.css,.json"
+    style="display:none;"
+    aria-hidden="true"
+    tabindex="-1"
+>
+
+<script type="module" src="./src/main.js"></script>
+
+</body>
 </html>
