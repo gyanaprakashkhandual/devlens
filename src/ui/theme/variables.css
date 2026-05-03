@@ -1,0 +1,69 @@
+@layer base {
+  :root {
+    --font-sans:
+      -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --font-mono:
+      "JetBrains Mono", "Fira Code", "Cascadia Code", "SF Mono", ui-monospace,
+      monospace;
+
+    --font-size-xs: 11px;
+    --font-size-sm: 12px;
+    --font-size-base: 13px;
+    --font-size-md: 14px;
+    --font-size-lg: 16px;
+
+    --line-height-tight: 1.3;
+    --line-height-normal: 1.6;
+
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+    --radius-xl: 12px;
+    --radius-pill: 999px;
+
+    --space-1: 2px;
+    --space-2: 4px;
+    --space-3: 6px;
+    --space-4: 8px;
+    --space-5: 12px;
+    --space-6: 16px;
+    --space-7: 20px;
+    --space-8: 24px;
+    --space-9: 32px;
+    --space-10: 40px;
+
+    --toolbar-height: 44px;
+    --nav-width: 160px;
+    --gutter-width: 40px;
+
+    --transition-fast: 120ms ease;
+    --transition-normal: 200ms ease;
+    --transition-slow: 300ms ease;
+
+    --z-base: 0;
+    --z-panel: 10;
+    --z-overlay: 100;
+    --z-modal: 200;
+    --z-toast: 300;
+
+    --color-error: #e05c5c;
+    --color-warning: #e0a84e;
+    --color-info: #5c9ee0;
+    --color-success: #4caf82;
+
+    --color-error-bg: rgba(224, 92, 92, 0.12);
+    --color-warning-bg: rgba(224, 168, 78, 0.12);
+    --color-info-bg: rgba(92, 158, 224, 0.12);
+    --color-success-bg: rgba(76, 175, 130, 0.12);
+
+    --tok-keyword: #c792ea;
+    --tok-string: #c3e88d;
+    --tok-number: #f78c6c;
+    --tok-boolean: #ff9cac;
+    --tok-null: #ff9cac;
+    --tok-regex: #89ddff;
+    --tok-comment: #546e7a;
+    --tok-punct: #89ddff;
+    --tok-ident: #eeffff;
+  }
+}

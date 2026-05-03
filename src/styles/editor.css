@@ -1,0 +1,402 @@
+@layer editor {
+  .code-editor {
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+    background: var(--bg-editor);
+    position: relative;
+  }
+
+  .editor-gutter {
+    width: var(--gutter-width);
+    flex-shrink: 0;
+    background: var(--bg-editor);
+    border-right: 1px solid var(--border-subtle);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding-top: 8px;
+    user-select: none;
+  }
+
+  .gutter-line {
+    height: 20px;
+    line-height: 20px;
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+    text-align: right;
+    padding-right: 10px;
+    padding-left: 4px;
+    cursor: pointer;
+    transition:
+      color var(--transition),
+      background var(--transition);
+    white-space: nowrap;
+  }
+
+  .gutter-line:hover {
+    color: var(--text-secondary);
+    background: var(--bg-hover);
+  }
+
+  .gutter-line.has-breakpoint {
+    color: var(--red);
+    background: var(--red-dim);
+    position: relative;
+  }
+
+  .gutter-line.has-breakpoint::before {
+    content: "";
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--red);
+  }
+
+  .editor-scroll-area {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .editor-highlight {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    font-family: var(--font-mono);
+    font-size: var(--font-size-base);
+    line-height: 20px;
+    padding: 8px 12px;
+    white-space: pre-wrap;
+    word-break: break-all;
+    overflow: hidden;
+    color: transparent;
+    z-index: 1;
+  }
+
+  .editor-highlight .line {
+    display: block;
+    height: 20px;
+    line-height: 20px;
+  }
+
+  .editor-textarea {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    font-family: var(--font-mono);
+    font-size: var(--font-size-base);
+    line-height: 20px;
+    padding: 8px 12px;
+    background: transparent;
+    color: var(--text-primary);
+    border: none;
+    outline: none;
+    resize: none;
+    overflow: auto;
+    white-space: pre;
+    tab-size: 2;
+    caret-color: var(--accent);
+    z-index: 2;
+  }
+
+  .editor-panel {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .editor-tab-bar {
+    display: flex;
+    align-items: stretch;
+    overflow-x: auto;
+    flex-shrink: 0;
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border);
+    height: 36px;
+  }
+
+  .editor-tab-bar::-webkit-scrollbar {
+    height: 0;
+  }
+
+  .editor-area {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .file-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 14px;
+    height: 36px;
+    font-family: var(--font-ui);
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+    border-right: 1px solid var(--border);
+    cursor: pointer;
+    transition:
+      background var(--transition),
+      color var(--transition);
+    white-space: nowrap;
+    position: relative;
+    user-select: none;
+    flex-shrink: 0;
+  }
+
+  .file-tab:hover {
+    background: var(--bg-hover);
+    color: var(--text-secondary);
+  }
+
+  .file-tab.active {
+    background: var(--bg-editor);
+    color: var(--text-primary);
+  }
+
+  .file-tab.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--accent);
+  }
+
+  .tab-icon {
+    font-size: 9px;
+    font-weight: 700;
+    padding: 1px 4px;
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+  }
+
+  .tab-icon-js {
+    background: var(--yellow-dim);
+    color: var(--yellow);
+  }
+  .tab-icon-mjs {
+    background: var(--yellow-dim);
+    color: var(--yellow);
+  }
+  .tab-icon-ts {
+    background: var(--accent-glow);
+    color: var(--accent);
+  }
+  .tab-icon-html {
+    background: var(--orange-dim);
+    color: var(--orange);
+  }
+  .tab-icon-css {
+    background: var(--purple-dim);
+    color: var(--purple);
+  }
+  .tab-icon-json {
+    background: var(--green-dim);
+    color: var(--green);
+  }
+
+  .tab-name {
+    max-width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .tab-close {
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: var(--text-muted);
+    opacity: 0;
+    transition:
+      opacity var(--transition),
+      background var(--transition),
+      color var(--transition);
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .file-tab:hover .tab-close {
+    opacity: 1;
+  }
+
+  .tab-close:hover {
+    background: var(--bg-active);
+    color: var(--red);
+    opacity: 1;
+  }
+
+  .tabbar {
+    display: flex;
+    overflow-x: auto;
+    height: 36px;
+    align-items: stretch;
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .tabbar::-webkit-scrollbar {
+    height: 0;
+  }
+
+  .tabbar-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 14px;
+    height: 36px;
+    font-family: var(--font-ui);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    border: none;
+    border-right: 1px solid var(--border);
+    background: transparent;
+    cursor: pointer;
+    white-space: nowrap;
+    position: relative;
+    transition:
+      background var(--transition),
+      color var(--transition);
+  }
+
+  .tabbar-tab:hover {
+    background: var(--bg-hover);
+    color: var(--text-secondary);
+  }
+
+  .tabbar-tab.active {
+    background: var(--bg-editor);
+    color: var(--text-primary);
+  }
+
+  .tabbar-tab.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--accent);
+  }
+
+  .tabbar-label {
+    pointer-events: none;
+  }
+
+  .tabbar-close {
+    font-size: 11px;
+    color: var(--text-muted);
+    opacity: 0;
+    transition:
+      opacity var(--transition),
+      color var(--transition);
+  }
+
+  .tabbar-tab:hover .tabbar-close {
+    opacity: 1;
+  }
+  .tabbar-close:hover {
+    color: var(--red);
+  }
+
+  .editor-search-bar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 20;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 0 0 0 var(--radius-md);
+    padding: 6px 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: var(--shadow-md);
+  }
+
+  .editor-search-bar input {
+    background: var(--bg-editor);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    padding: 4px 8px;
+    outline: none;
+    width: 160px;
+    transition: border-color var(--transition);
+  }
+
+  .editor-search-bar input:focus {
+    border-color: var(--accent);
+  }
+
+  .editor-search-bar button {
+    padding: 3px 8px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-ui);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: var(--bg-active);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition:
+      background var(--transition),
+      color var(--transition);
+  }
+
+  .editor-search-bar button:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+  }
+
+  .tok-keyword {
+    color: var(--tok-keyword);
+  }
+  .tok-string {
+    color: var(--tok-string);
+  }
+  .tok-number {
+    color: var(--tok-number);
+  }
+  .tok-boolean {
+    color: var(--tok-boolean);
+  }
+  .tok-null {
+    color: var(--tok-null);
+  }
+  .tok-regex {
+    color: var(--tok-regex);
+  }
+  .tok-comment {
+    color: var(--tok-comment);
+    font-style: italic;
+  }
+  .tok-punct {
+    color: var(--tok-punct);
+  }
+  .tok-ident {
+    color: var(--tok-ident);
+  }
+}

@@ -1,7 +1,7 @@
 import { EventBus } from './core/EventBus.js';
 import { StateStore } from './core/StateStore.js';
 import { SessionManager } from './core/SessionManager.js';
-import { Router } from './core/Router.js';
+import { Router } from "./core/Router.js"
 
 import { FileReaderController } from './ingestion/FileReader.js';
 
